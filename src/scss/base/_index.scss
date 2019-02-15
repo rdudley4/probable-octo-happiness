@@ -1,0 +1,20 @@
+/**
+  * * Partial: base/_index.scss
+  * ?    Desc: Index file to import all other base partials.
+  */
+
+/* Browser Reset (Normalize.css)
+   ---------------------------------- */
+@import 'normalize';
+
+/* SASS Variables
+   ---------------------------------- */
+@import 'variables';
+
+/* Keyframe Animations
+   ---------------------------------- */
+@import 'animation';
+
+/* Element selector styles
+   ---------------------------------- */
+@import 'base';

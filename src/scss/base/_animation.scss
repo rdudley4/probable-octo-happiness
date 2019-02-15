@@ -1,0 +1,17 @@
+/**
+  * * Partial: _animation.scss
+  * ?    Desc: Contains all css keyframe rule sets.
+  */
+
+/* Bounce Effect
+   -------------------------------------------------------------------------- */
+
+@keyframes bounce-in {
+  33% {
+    transform: scale3d(.8, .8, .8);
+  }
+
+  66% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+}
