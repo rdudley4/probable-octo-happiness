@@ -21,6 +21,10 @@ body {
   background-color: $background;
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.1);
   display         : flex;
@@ -29,17 +33,18 @@ button {
   width           : 100%;
   padding         : 15px;
   margin-top      : auto;
-  background-color: $comment;
+  background-color: $selection;
   color           : $foreground;
   font-weight     : bold;
   border          : none;
-  border-bottom   : 3px solid darken($comment, 20%);
+  border-top: 1px solid $black_80;
+  border-bottom   : 3px solid darken($selection, 5%);
   transition      : all 250ms ease;
 
   &:hover {
     cursor: pointer;
-    background-color: $pink;
-    border-bottom-color: darken($pink, 5%);
+    background-color: $comment;
+    border-bottom-color: darken($comment, 5%);
 
     .material-icons {
       transform: scale3d(1.2, 1.2, 1.2);
@@ -57,7 +62,6 @@ input[type="text"] {
   border-bottom : $foreground 1px solid;
   color         : $foreground;
   margin        : 20px 0;
-  margin-left: 8px;
   transition: width 450ms ease;
 
   &:focus {
@@ -70,7 +74,7 @@ article {
   flex-direction  : column;
   color           : $foreground;
   text-align      : center;
-  border          : 1px solid rgba(0, 0, 0, 0.8);
+  border          : $border-default;
   background-color: $selection;
   box-shadow      : 0 0 3px 2px rgba(0, 0, 0, .1);
 
@@ -79,6 +83,7 @@ article {
     // ! If we are changing almost everything about font's props, is h2 really a good place for this? Perhaps a more semantic class or element could be used. This is just overriding the h2 styles which could be otherwise left untouched.
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid $black_80;
     box-shadow : 0 0 3px 2px rgba(0, 0, 0, .1);
     font-family     : Roboto;
     font-weight     : 300;
@@ -87,7 +92,7 @@ article {
     width           : 100%;
     text-align      : center;
     padding         : 15px;
-    background-color: $comment;
+    // background-color: $comment;
 
     .material-icons {
       margin-right: .5rem;
@@ -164,20 +169,19 @@ ul {
   margin               : 0 auto;
   padding              : 10px;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  grid-template-rows   : minmax(220px, auto);
+  grid-template-rows   : auto;
+  grid-auto-rows       : minmax(220px, auto);
   grid-gap             : 10px;
 }
 
 .wrapper {
-  max-width: 980px;
+  max-width: 1000px;
   margin: auto;
   padding: 0 10px;
   display: flex;
   align-items: center;
 
-  .material-icons {
-    color: $foreground;
-  }
+  
 }
 
 .lg {
@@ -198,7 +202,7 @@ ul {
 }
 
 .downvotes {
-  color: $orange;
+  color: $red;
   margin-left: 8px;
 }
 
@@ -224,4 +228,36 @@ ul {
 
 .search {
   justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  .material-icons {
+    color: $foreground;
+  }
+}
+
+#featured_article {
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  .lg {
+    color: $red;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 1rem 0;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
+  img {
+    border-bottom: 1px solid $black_80;
+    margin-bottom: 15px;
+  }
 }

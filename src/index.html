@@ -31,17 +31,35 @@
       <img src="./img/test_logo.svg" alt="Website Logo" />
       <h1>Shinier than yours, meatbag. Bender, quit destroying the universe!</h1>
     </header>
-    <div class="wrapper search">
-      <i class="material-icons lg">search</i>
-      <input type="text" name="filter_stories" id="main_search" placeholder="Enter search query here...">
-    </div>
+    
     <!-- 
       - Element: <nav.grid>
       -    Desc: Grid Container
       - Partial: _base.scss
     -->
     <main class="grid">
-      <article>  
+      <div class="group search">
+        <i class="material-icons lg">search</i>
+        <input type="text" name="filter_stories" id="main_search" placeholder="Enter search query here...">
+      </div>
+      <article id="featured_article">   
+        <h2>
+          <span class="group">
+            <i class="material-icons upvotes">thumb_up</i>
+            72.2k
+            <i class="material-icons downvotes">thumb_down</i>
+            15.5k
+          </span>
+          <span class="group"><i class="material-icons">visibility</i>124.7k</span>
+        </h2>
+        <img src="./img/animated_feature.gif" alt="vector graphic">
+        <i class="material-icons lg">whatshot</i>
+        <h3>Featured Article</h3>
+        <p>Then throw her in the laundry room, which will hereafter be referred to as "the brig". Oh, I think we should just stay friends. You seem malnourished. Are you suffering from intestinal parasites? Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages! Yeah, I do that with my stupidness. There's one way and only one way to determine if an animal is intelligent. Dissect its brain! I decline the title of Iron Cook and accept the lesser title of Zinc Saucier, which I just made up. Uhh… also, comes with double prize money.</p>
+        <p>Then throw her in the laundry room, which will hereafter be referred to as "the brig". Oh, I think we should just stay friends. You seem malnourished. Are you suffering from intestinal parasites? Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages! Yeah, I do that with my stupidness. There's one way and only one way to determine if an animal is intelligent. Dissect its brain! I decline the title of Iron Cook and accept the lesser title of Zinc Saucier, which I just made up. Uhh… also, comes with double prize money.</p>
+        <button>Read More <i class="material-icons">forward</i></button>
+      </article>
+      <article>
         <h2>
           <span class="group">
             <i class="material-icons upvotes">thumb_up</i>
