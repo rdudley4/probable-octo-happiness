@@ -281,11 +281,11 @@ aside {
 
 .aside-content {
   flex-direction: column;
-  align-items: flex-start;
+  align-items: normal;
 
   h2 {
     @extend %headline-default;
-    padding: 0 0 0 24px;
+    padding-left: 0;
 
     .material-icons {
       margin-right: .5rem;
@@ -294,6 +294,7 @@ aside {
 
   ul {
     margin: 0;
+    padding-left: 0;
     // display: flex;
     // flex-direction: column;
     // flex-grow: 1;
@@ -321,4 +322,10 @@ aside {
 
 .just_added {
   color: $cyan;
+}
+
+.posted_date {
+  align-self: baseline;
+  margin-left: auto;
+  color: $selection;
 }
