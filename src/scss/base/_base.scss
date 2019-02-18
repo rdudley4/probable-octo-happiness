@@ -173,83 +173,30 @@ ul {
   }
 }
 
-/* Testing
-   -------------------------------------------------------------------------- */
-.grid {
-  max-width            : 1200px;
-  display              : grid;
-  margin               : 0 auto;
-  padding              : 10px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-template-rows   : auto;
-  grid-auto-rows       : minmax(220px, auto);
-  grid-gap             : 10px;
-}
-
-.grid-aside {
-  display: grid;
-}
-
-.wrapper {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 10px;
-  display: flex;
-  align-items: center; 
-}
-
-.lg {
-  font-size: 3rem;
-  margin-top: 1.125rem;
-}
-
-.material-icons {
-  transition: all 250ms ease;
-}
-
-.group {
-  display: flex;
-  align-items: center;
-}
-
-.upvotes {
-  color: $green;
-}
-
-.downvotes {
-  color: $red;
-  margin-left: 8px;
-}
-
-.upvotes,
-.downvotes {
-  &:hover {
-    animation: bounce-in 500ms ease;
-    cursor: pointer;
-  }
-}
+/**
+  * Selector: .login-button
+  *     Desc: Main login button on the right side of the main navigation.
+  *    Notes: Simple outline style with an animated hover to change color/bg.
+  */
 
 .login-button {
-  border: 2px solid $foreground;
+  border       : 2px solid $foreground;
   border-radius: 20px;
-  transition: all 150ms ease;
+  transition   : all 150ms ease;
 
   &:hover {
-    cursor: pointer;
+    cursor          : pointer;
+    color           : $background;
     background-color: $foreground;
-    color: $background;
   }
 }
 
-.search {
-  justify-content: center;
-  grid-column-start: 1;
-  grid-column-end: -1;
-
-  .material-icons {
-    color: $foreground;
-  }
-}
+/**
+  * Selector: #featured_article
+  *     Desc: Large featured article on the front page.
+  *    Notes: This spans the entire grid on small devices, and from first to
+  *           second to last column on larger screens.
+  */
 
 #featured_article {
   grid-column: 1 / -1;
@@ -258,20 +205,14 @@ ul {
     grid-column-end: -2;
   }
 
-  .lg {
-    color: $yellow;
-  }
+  .lg { color: $yellow; }
 
-  h2 {
-    margin-bottom: 0;
-  }
+  h2  { margin-bottom: 0; }
 
   p {
     margin: 1rem 0;
 
-    &:last-of-type {
-      margin-bottom: 2rem;
-    }
+    &:last-of-type { margin-bottom: 2rem; }
   }
 
   img {
@@ -279,6 +220,14 @@ ul {
     margin-bottom: 15px;
   }
 }
+
+/**
+  * Selector: <aside>
+  *     Desc: Content container for trending/popular/latest sections.
+  *    Notes: These are links to various articles on the side place next to the
+  *           featured article on the front page. Takes up full width on small
+  *           devices, and the last column only on larger devices.
+  */
 
 aside {
   grid-column: 1 / -1;
@@ -289,53 +238,33 @@ aside {
   }
 }
 
+/**
+  * Selector: .aside-content
+  *     Desc: Flex container for the aside items content.
+  *    Notes: Styles various aspects of each aside item such as h2 and unordered
+  *           lists using a column flex layout.
+  */
+
 .aside-content {
-  flex-direction: column;
-  align-items: normal;
+  @extend %flex_col;
 
   h2 {
     @extend %headline-default;
     padding-left: 0;
 
-    .material-icons {
-      margin-right: .5rem;
-    }
+    .material-icons { margin-right: remcalc(8px); }
   }
 
   ul {
-    margin: 0;
+    margin      : 0;
     padding-left: 0;
-    // display: flex;
-    // flex-direction: column;
-    // flex-grow: 1;
-    // justify-content: flex-start;
 
     li {
-      padding: 10px 0;
-      color: $foreground;
+      padding   : 10px 0;
+      color     : $foreground;
       transition: color 150ms ease;
 
-      &:hover {
-        color: $pink;
-      }
+      &:hover { color: $pink; }
     }
   }
-}
-
-.trending {
-  color: $orange;
-}
-
-.popular {
-  color: $red;
-}
-
-.just_added {
-  color: $cyan;
-}
-
-.posted_date {
-  align-self: baseline;
-  margin-left: auto;
-  color: $selection;
 }

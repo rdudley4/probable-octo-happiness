@@ -14,15 +14,27 @@
 
 input[type="text"] {
   width         : 50%;
-  padding-bottom: 8px;
-  margin        : 20px 0;
-  color         : $foreground;
-  background    : none;
+  padding-bottom: remcalc(8px);
+  margin        : remcalc(20px) 0;
   border        : none;
   border-bottom : $foreground 1px solid;
+  color         : $foreground;
+  background    : none;
   transition    : width 450ms ease;
 
-  &:focus {
-    width: 100%;
-  }
+  &:focus { width: 100%; }
+}
+
+/**
+  * Selector: .search
+  *     Desc: Styles specific to the search input.
+  *    Notes: Spans all grid columns on all screen sizes.
+  */
+
+.search {
+  justify-content  : center;
+  grid-column-start: 1;
+  grid-column-end  : -1;
+
+  .material-icons { color: $foreground; }
 }
