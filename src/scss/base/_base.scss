@@ -6,44 +6,61 @@
 /* Content Containers
    -------------------------------------------------------------------------- */
 
+* {
+  box-sizing: border-box;
+}
+
 /**
   * Selector: <body>
   *     Desc: Main content container
   *    Notes: Using this as 960px container, centered.
   */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Nunito;
   background-color: $background;
 }
 
+/**
+  * Selector: <img>
+  *     Desc: Targets all img elements.
+  *    Notes: 100% max-width to force images to be responsive.
+  */ 
+
 img {
   max-width: 100%;
 }
 
+/**
+  * Selector: <button>
+  *     Desc: Base styles for all buttons.
+  *    Notes: Display flex so we can alight text and arrow icon with flexbox.
+  */
+
 button {
-  box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.1);
+  box-shadow      : 0 -5px 5px -5px rgba(0,0,0,0.1);
   display         : flex;
   align-items     : center;
   justify-content : space-between; 
   width           : 100%;
-  padding         : 15px;
+  padding         : remcalc(15px);
   margin-top      : auto;
   background-color: $selection;
   color           : $foreground;
   font-weight     : bold;
   border          : none;
-  border-top: 1px solid $black_80;
+  border-top      : 1px solid $black_80;
   border-bottom   : 3px solid darken($selection, 5%);
   transition      : all 250ms ease;
 
+  /**
+  * Selector: <button:hover>
+  *     Desc: Hover effects for all <button> elements.
+  *    Notes: Transition bg/border color on hover. Also use a 3d transform to   *           give the arrow icons a 'grow' animation effect.
+  */
   &:hover {
-    cursor: pointer;
-    background-color: $comment;
+    cursor             : pointer;
+    background-color   : $comment;
     border-bottom-color: darken($comment, 5%);
 
     .material-icons {
@@ -52,82 +69,63 @@ button {
   }
 }
 
-%headline-default {
-  font-family: Roboto;
-  font-weight: 300;
-  font-size  : 1.1rem;
-  padding    : 15px;
-  margin: 0;
-}
-
-
-input[type="text"] {
-  width: 50%;
-  background    : none;
-  border        : none;
-  padding-bottom: 8px;
-  border-bottom : $foreground 1px solid;
-  color         : $foreground;
-  margin        : 20px 0;
-  transition: width 450ms ease;
-
-  &:focus {
-    width: 100%;
-  }
-}
+/**
+  * Selector: <article>
+  *     Desc: Container for all page news articles and posts.
+  *    Notes: This is the main container for the article cards.
+  */
 
 article {
-  display         : flex;
-  flex-direction  : column;
+  @extend %flex_col;
   color           : $foreground;
   text-align      : center;
   border          : $border-default;
   background-color: $selection;
   box-shadow      : 0 0 3px 2px rgba(0, 0, 0, .1);
 
+  /**
+    * Selector: .stats_bar
+    *     Desc: Contains up/down vote and view statistics above each article.
+    *    Notes: This class is placed on the h2 of each article.
+    */
 
-  h2 { 
-    // ! If we are changing almost everything about font's props, is h2 really a good place for this? Perhaps a more semantic class or element could be used. This is just overriding the h2 styles which could be otherwise left untouched.
+  .stats_bar {
     @extend %headline-default;
-    display: flex;
-    justify-content: space-between;
+    @extend %flex_sb;
+    width        : 100%;
+    text-align   : center;
     border-bottom: 1px solid $black_80;
-    box-shadow : 0 0 3px 2px rgba(0, 0, 0, .1);
-    width           : 100%;
-    text-align      : center;
-    // background-color: $comment;
+    box-shadow   : 0 0 3px 2px rgba(0, 0, 0, .1);
 
-    .material-icons {
-      margin-right: .5rem;
-    }
+    .material-icons { margin-right: remcalc(8px); }
   }
 
-  h3 {
-    color: $pink;
-  }
+  h3 { color: $pink; }
 
   p {
-    text-align: justify;
-    padding: 0 15px;
-    margin-bottom: 2rem;
+    text-align   : justify;
+    padding      : 0 remcalc(15px);
+    margin-bottom: remcalc(32px);
   }
 }
 
+/**
+  * Selector: <header>
+  *     Desc: Container for site landing & navigation.
+  *    Notes: Need to adjust spacing and padding for mobile first approach.
+  */
+
 header {
-  display         : flex;
-  flex-direction  : column;
-  align-items     : center;
+  @extend %flex_col_centered;
+  padding         : 0 remcalc(25px) remcalc(100px) remcalc(25px);
+  margin-bottom   : remcalc(50px);
+  border-bottom   : 2px solid $selection;
   color           : $foreground;
   background-color: $selection;
-  padding         : 0 25px 100px 25px;
-  margin-bottom   : 50px;
-  border-bottom   : 2px solid $selection;
   background-image: url('../img/60-lines.png');
   box-shadow      : inset 0 0 3px 2px rgba(0, 0, 0, .1);
 
-  h1 {
-    text-align: center;
-  }
+  h1 { text-align: center; }
 
   img {
     max-width: 33%;
@@ -135,31 +133,42 @@ header {
   }
 }
 
+/**
+  * Selector: <nav>
+  *     Desc: Container for main site navigation.
+  *    Notes: Max width is 400px larger than grid.
+  */
+
 nav {
-  width: 100%;
+  width    : 100%;
   max-width: 1600px;
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
+
+  ul { @extend %flex_sb; }
 
   .material-icons {
-    font-size: 1rem;
-    margin-left: 2px;
+    font-size  : remcalc(16px);
+    margin-left: remcalc(2px);
   }
 }
+
+/**
+  * Selector: <ul> <li> <li:hover>
+  *     Desc: Defines base styles for all unordered lists and list items.
+  *    Notes: Transition animates the text color change when a list item is
+  *           hovered over.
+  */
 
 ul {
   padding: 0;
 
   li {
     list-style: none;
-    padding: 8px 12px;
+    padding   : remcalc(8px) remcalc(12px);
     transition: all 150ms ease;
 
     &:hover {
       cursor: pointer;
-      color: $pink;
+      color : $pink;
     }
   }
 }

@@ -1,0 +1,28 @@
+/**
+  * * Partial: _forms.scss
+  * ?    Desc: All styles related to form elements.
+  */
+
+/* Form Inputs
+   -------------------------------------------------------------------------- */
+
+/**
+  * Selector: input[type="text"]
+  *     Desc: Base styles for all text inputs.
+  *    Notes: Default width is 50% of parent, animating to 100% on focus.
+  */
+
+input[type="text"] {
+  width         : 50%;
+  padding-bottom: 8px;
+  margin        : 20px 0;
+  color         : $foreground;
+  background    : none;
+  border        : none;
+  border-bottom : $foreground 1px solid;
+  transition    : width 450ms ease;
+
+  &:focus {
+    width: 100%;
+  }
+}

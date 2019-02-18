@@ -1,0 +1,21 @@
+/**
+  * * Partial: _typography.scss
+  * ?    Desc: All font/text related sytles.
+  */
+
+/* Headlines
+   -------------------------------------------------------------------------- */
+
+/**
+  * Selector: %headline-default
+  *     Desc: Shared styles used by various content headlines.
+  *    Notes:
+  */
+
+%headline-default {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size  : remcalc(18px);
+  padding    : 15px;
+  margin     : 0;
+}

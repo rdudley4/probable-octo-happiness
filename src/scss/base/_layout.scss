@@ -1,0 +1,50 @@
+/**
+  * * Partial: _layout.scss
+  * ?    Desc: Classes related to page layout, mainly flex containers.
+  */
+
+/* Flex Containers
+   -------------------------------------------------------------------------- */
+
+/**
+  * Selector: %flex_sb
+  *     Desc: Flexbox container using space-between to align content
+  *    Notes: .flex_sb-centered also aligns items center.
+  */
+
+%flex_sb {
+  display        : flex;
+  justify-content: space-between;
+
+  &-centered {
+    @extend %flex_sb;
+    align-items: center;
+  }
+}
+
+/**
+  * Selector: %flex_v-centered
+  *     Desc: Flex container that vertically aligns content to center.
+  *    Notes: Intended to be used with default row flex-direction.
+  */
+
+%flex_v-centered {
+  display    : flex;
+  align-items: center;
+}
+
+/**
+  * Selector: %flex_col
+  *     Desc: Flex container that displays children using column layout.
+  *    Notes: Used mainly to vertically stack flex items.
+  */
+
+%flex_col {
+  display       : flex;
+  flex-direction: column;
+
+  &_centered {
+    @extend %flex_col;
+    align-items: center;
+  }
+}

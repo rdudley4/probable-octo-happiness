@@ -6,6 +6,12 @@
 /* Bounce Effect
    -------------------------------------------------------------------------- */
 
+/**
+  * Animation: bounce-in
+  *      Desc: A subtle bouncing effect by manipulating the elements scale.
+  *    Timing: .8 scale -> 33%, 1.1 scale -> 66%, 1.0 scale -> 100%
+  */
+
 @keyframes bounce-in {
   33% {
     transform: scale3d(.8, .8, .8);
