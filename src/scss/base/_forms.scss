@@ -36,5 +36,10 @@ input[type="text"] {
   grid-column-start: 1;
   grid-column-end  : -1;
 
+  @media screen and   (min-width: 908px) {
+    justify-content: flex-start;
+    grid-column-end: -2;
+  }
+
   .material-icons { color: $foreground; }
 }
