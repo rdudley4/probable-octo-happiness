@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <!-- Metadata
+      ====================================================================== -->
   <!-- 
     - Element: <head>
     -    Desc: Handles all metadata.
@@ -14,6 +16,15 @@
   </head>
 
   <body>
+    <!-- Page Landing & Navigation
+        ==================================================================== -->
+    <!-- 
+      - Element: <header> <nav>
+      -    Desc: Main site landing section. Navigation is included here.
+      -   Notes: Flex groups are used so we can separate the login button using
+      -          space-between.
+    -->
+    <!-- TODO: Need to animate the landing svg. -->
     <header>
       <nav>
         <ul>
@@ -31,17 +42,33 @@
       <img src="./img/test_logo.svg" alt="Website Logo" />
       <h1>Shinier than yours, meatbag. Bender, quit destroying the universe!</h1>
     </header>
-    
+    <!-- Main Content
+        ==================================================================== -->
     <!-- 
-      - Element: <nav.grid>
-      -    Desc: Grid Container
-      - Partial: _base.scss
+      - Element: <main.grid>
+      -    Desc: Main page content, main grid container.
+      -   Notes: This is the main grid container for all page content.
     -->
     <main class="grid">
+      <!-- Grid Search Bar
+          ================================ -->
+      <!-- 
+        - Element: .search
+        -    Desc: Search bar that appears above articles.
+        -   Notes: This takes up entire first row of main grid.
+      -->
       <div class="flex_group search">
         <i class="material-icons lg">search</i>
         <input type="text" name="filter_stories" id="main_search" placeholder="Enter search query here...">
       </div>
+      <!-- Featured Article
+          ================================ -->
+      <!-- 
+        - Element: #featured_article
+        -    Desc: A much larger version of the default article, used to feature
+        -          a specific piece of content.
+        -   Notes: This + Aside comprise row 2 of the grid.
+      -->
       <article id="featured_article">   
         <h2 class="stats_bar">
           <span class="flex_group">
@@ -65,6 +92,14 @@
         which case, for the love of God, don't not do it!</p>
         <button>Read More <i class="material-icons">forward</i></button>
       </article>
+      <!-- Trending/Pop/Latest Sidebar
+          ================================ -->
+      <!-- 
+        - Element: .grid-aside
+        -    Desc: A sidebar that appears adjacent to the featured article.
+        -   Notes: This sidebar is a nested grid contained within its own row, 
+        -          or the last column of row 2.
+      -->
       <aside class="grid-aside">
         <div class="aside-content">
           <h2>
@@ -157,6 +192,14 @@
           </ul>
         </div>
       </aside>
+      <!-- Remaining Articles
+          ================================ -->
+      <!-- 
+        - Element: <article>
+        -    Desc: Container for each news article displayed in the grid.
+        -   Notes: Includes .stats_bar which displays a thumbs up or down
+        -          icon. Also includes a button for further reading.
+      -->
       <article>
         <h2 class="stats_bar">
           <span class="flex_group">
