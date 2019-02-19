@@ -28,7 +28,8 @@ input[type="text"] {
 /**
   * Selector: .search
   *     Desc: Styles specific to the search input.
-  *    Notes: Spans all grid columns on all screen sizes.
+  *    Notes: Spans all grid columns on mobile, and everything but last column
+  *           on larger screens.
   */
 
 .search {
