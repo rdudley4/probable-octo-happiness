@@ -29,9 +29,11 @@ body {
   *    Notes: 100% max-width to force images to be responsive.
   */ 
 
-img {
+img, video {
   max-width: 100%;
 }
+
+
 
 /**
   * Selector: <button>
@@ -217,7 +219,8 @@ ul {
     &:last-of-type { margin-bottom: 2rem; }
   }
 
-  img {
+  video {
+    width        : 100%;
     border-bottom: 1px solid $black_80;
     margin-bottom: 15px;
   }

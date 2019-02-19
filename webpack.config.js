@@ -33,7 +33,15 @@ module.exports = {
       },
       {
         "test": /\.html$/,
-        "use": 'html-loader'
+        "use": {
+          loader: 'html-loader',
+          options: {
+            attrs: [
+              'video:src',
+              'img:src'
+            ]
+          }
+        }
       },
       {
         "test": /\.(gif|png|jpe?g|svg)$/i,
@@ -48,6 +56,18 @@ module.exports = {
           'image-webpack-loader'
         ],
       },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name]-[contenthash:8].[ext]',
+              outputPath: 'img'
+            }
+          }
+        ]
+      }
     ]
   },
   "plugins": [
