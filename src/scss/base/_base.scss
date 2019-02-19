@@ -13,11 +13,13 @@
 /**
   * Selector: <body>
   *     Desc: Main content container
-  *    Notes: Using this as 960px container, centered.
+  *    Notes: Using this as 960px container, centered. Hide overflow to prevent
+  *           any whitespace issues.
   */
 
 body {
-  font-family: Nunito;
+  overflow-x      : hidden;
+  font-family     : Nunito;
   background-color: $background;
 }
 
@@ -129,7 +131,7 @@ header {
 
   img {
     max-width: 33%;
-    min-width: 515px;
+    min-width: 350px;
   }
 }
 
@@ -230,11 +232,14 @@ ul {
   */
 
 aside {
-  grid-column: 1 / -1;
-  grid-row-gap: 10px;
+  grid-column   : 1 / -1;
+  grid-row-gap  : 10px;
+  grid-row-start: 2;
+  margin-bottom : remcalc(15px);
 
   @media screen and (min-width: 908px) {
-    grid-column: span 1 / -1;
+    grid-column  : span 1 / -1;
+    margin-bottom: 0;
   }
 }
 
