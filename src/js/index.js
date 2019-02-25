@@ -8,4 +8,5 @@
 
 import '../scss/main.scss';
 
-// import logo from '../img/test_logo.svg';
+/* Testing Area
+   -------------------------------------------------------------------------- */

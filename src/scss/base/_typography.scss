@@ -30,7 +30,7 @@
   *           needed, however.
   */
 
-.material-icons { transition: all 250ms ease; }
+.material-icons { transition: transform 250ms ease-in-out; }
 
 /**
   * Selector: .lg

@@ -33,8 +33,6 @@ img, video {
   max-width: 100%;
 }
 
-
-
 /**
   * Selector: <button>
   *     Desc: Base styles for all buttons.
@@ -220,7 +218,7 @@ ul {
   }
 
   video {
-    width        : 100%;
+    width: 100%;
     border-bottom: 1px solid $black_80;
     margin-bottom: 15px;
   }

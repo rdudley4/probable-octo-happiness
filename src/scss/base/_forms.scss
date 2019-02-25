@@ -22,7 +22,10 @@ input[type="text"] {
   background    : none;
   transition    : width 450ms ease;
 
-  &:focus { width: 100%; }
+  &:focus {
+    width  : 100%;
+    outline: none;
+  }
 }
 
 /**
