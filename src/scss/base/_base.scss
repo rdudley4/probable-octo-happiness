@@ -3,6 +3,8 @@
   * ?    Desc: Styles related to base element selectors.
   */
 
+@import url(#{$google-font-url});
+
 /* Content Containers
    -------------------------------------------------------------------------- */
 
@@ -43,7 +45,7 @@ button {
   box-shadow      : 0 -5px 5px -5px rgba(0,0,0,0.1);
   display         : flex;
   align-items     : center;
-  justify-content : space-between; 
+  justify-content : space-between;
   width           : 100%;
   padding         : remcalc(15px);
   margin-top      : auto;
